@@ -43,16 +43,16 @@
 
     <!-- Bottom Navigation for PWA -->
     <nav class="fixed bottom-0 left-0 right-0 z-30 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 safe-area-inset">
-      <div class="flex justify-around items-center py-2">
+      <div class="flex justify-center items-center py-2 gap-4">
         <UButton
           icon="i-heroicons-home"
           color="gray"
           variant="ghost"
-          class="flex-1 py-3"
+          class="px-6 py-3"
           to="/"
           :ui="{ 
-            rounded: 'rounded-none',
-            padding: { sm: 'px-3 py-3' }
+            rounded: 'rounded-lg',
+            padding: { sm: 'px-6 py-3' }
           }"
         >
           Home
@@ -62,39 +62,25 @@
           icon="i-heroicons-plus-circle"
           color="primary"
           variant="ghost"
-          class="flex-1 py-3"
+          class="px-6 py-3"
           to="/add-pill"
           :ui="{ 
-            rounded: 'rounded-none',
-            padding: { sm: 'px-3 py-3' }
+            rounded: 'rounded-lg',
+            padding: { sm: 'px-6 py-3' }
           }"
         >
           Add
         </UButton>
         
         <UButton
-          icon="i-heroicons-clock"
-          color="gray"
-          variant="ghost"
-          class="flex-1 py-3"
-          to="/schedule"
-          :ui="{ 
-            rounded: 'rounded-none',
-            padding: { sm: 'px-3 py-3' }
-          }"
-        >
-          Schedule
-        </UButton>
-        
-        <UButton
           icon="i-heroicons-chart-bar"
           color="gray"
           variant="ghost"
-          class="flex-1 py-3"
+          class="px-6 py-3"
           to="/history"
           :ui="{ 
-            rounded: 'rounded-none',
-            padding: { sm: 'px-3 py-3' }
+            rounded: 'rounded-lg',
+            padding: { sm: 'px-6 py-3' }
           }"
         >
           History

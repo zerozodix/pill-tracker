@@ -29,13 +29,7 @@ export interface TimeSlot {
     takenAt?: Date
 }
 
-export interface PillSchedule {
-    id: string
-    pillId: string
-    date: Date
-    timeSlots: TimeSlot[]
-    completed: boolean
-}
+
 
 export interface PillReminder {
     id: string

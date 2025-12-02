@@ -1,12 +1,11 @@
 # Pill Tracker
 
-A modern Progressive Web App (PWA) for tracking medication schedules, built with Nuxt 3, Nuxt UI, and TypeScript.
+A modern Progressive Web App (PWA) for tracking medications, built with Nuxt 3, Nuxt UI, and TypeScript.
 
 ## 🚀 Features
 
 - **📱 Progressive Web App** - Installable on mobile and desktop
 - **💊 Pill Management** - Add, edit, and delete medications
-- **⏰ Smart Scheduling** - Flexible frequency options (daily, weekly, monthly, as-needed)
 - **🔔 Notifications** - Browser notifications for pill reminders
 - **🌙 Dark Mode** - Built-in dark/light mode support
 - **📱 Responsive Design** - Optimized for all screen sizes
@@ -32,8 +31,7 @@ A modern Progressive Web App (PWA) for tracking medication schedules, built with
 │   └── auth.ts                   # Route middleware (example)
 ├── 📁 pages/
 │   ├── index.vue                 # Home/dashboard page
-│   ├── add-pill.vue              # Add new pill page
-│   └── schedule.vue              # Schedule view page
+│   └── add-pill.vue              # Add new pill page
 ├── 📁 plugins/
 │   └── init.client.ts            # Client-side initialization
 ├── 📁 public/                    # Static assets

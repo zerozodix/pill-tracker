@@ -1,64 +1,14 @@
 import { defineStore } from 'pinia'
-import type { Pill, PillSchedule } from '~/types'
+import type { Pill } from '~/types'
 
 export const usePillStore = defineStore('pills', () => {
     // State
     const pills = ref<Pill[]>([])
-    const schedule = ref<PillSchedule[]>([])
     const loading = ref(false)
     const error = ref<string | null>(null)
 
     // Getters
-    const todaysPills = computed(() => {
-        const today = new Date()
-        return pills.value.filter(pill => {
-            const { frequency } = pill
-            const startDate = new Date(frequency.startDate)
-            const endDate = frequency.endDate ? new Date(frequency.endDate) : null
-
-            // Check if pill is active today
-            if (today < startDate || (endDate && today > endDate)) {
-                return false
-            }
-
-            // Check frequency type
-            switch (frequency.type) {
-                case 'daily':
-                    return true
-                case 'weekly':
-                    const daysSinceStart = Math.floor((today.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24))
-                    return daysSinceStart % 7 < frequency.value
-                case 'monthly':
-                    return today.getDate() <= frequency.value
-                case 'as-needed':
-                    return true
-                default:
-                    return false
-            }
-        })
-    })
-
     const pillsCount = computed(() => pills.value.length)
-
-    const upcomingReminders = computed(() => {
-        const now = new Date()
-        const upcoming: Array<{ pill: Pill; time: Date }> = []
-
-        todaysPills.value.forEach(pill => {
-            pill.frequency.times.forEach(timeSlot => {
-                if (!timeSlot.taken) {
-                    const today = new Date().toISOString().split('T')[0]
-                    const reminderTime = new Date(`${today}T${timeSlot.time}:00`)
-
-                    if (reminderTime > now) {
-                        upcoming.push({ pill, time: reminderTime })
-                    }
-                }
-            })
-        })
-
-        return upcoming.sort((a, b) => a.time.getTime() - b.time.getTime())
-    })
 
     // Actions
     const loadPills = async () => {
@@ -183,14 +133,11 @@ export const usePillStore = defineStore('pills', () => {
     return {
         // State
         pills: readonly(pills),
-        schedule: readonly(schedule),
         loading: readonly(loading),
         error: readonly(error),
 
         // Getters
-        todaysPills,
         pillsCount,
-        upcomingReminders,
 
         // Actions
         loadPills,
