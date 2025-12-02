@@ -2,7 +2,8 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-12-02',
   modules: [
     '@nuxt/ui',
-    '@vite-pwa/nuxt'
+    '@vite-pwa/nuxt',
+    '@pinia/nuxt'
   ],
   css: ['~/assets/css/main.css'],
 

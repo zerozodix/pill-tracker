@@ -12,9 +12,13 @@
   },
   "dependencies": {
     "@nuxt/ui": "^3.1.0",
+    "@pinia/nuxt": "^0.11.3",
     "@vite-pwa/nuxt": "^0.10.5",
+    "@vueuse/core": "^14.1.0",
     "nuxt": "^3.20.1",
-    "vue": "latest"
+    "pinia": "^3.0.4",
+    "vue": "latest",
+    "zod": "^4.1.13"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
